@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Animation</title>	<style>
+
+		canvas {
+
+			border: 1px solid black;
+
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<canvas id="myCanvas" width="400" height="400"></canvas>
+
+	<script>
+
+		var canvas = document.getElementById("myCanvas");
+
+		var ctx = canvas.getContext("2d");
+
+		
+
+		var x = canvas.width/2;
+
+		var y = canvas.height/2;
+
+		var dx = 2;
+
+		var dy = -2;
+
+		var radius = 20;
+
+		
+
+		function drawCircle() {
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			ctx.beginPath();
+
+			ctx.arc(x, y, radius, 0, Math.PI*2);
+
+			ctx.fillStyle = "#0095DD";
+
+			ctx.fill();
+
+			ctx.closePath();
+
+			x += dx;
+
+			y += dy;
+
+		}
+
+		
+
+		setInterval(drawCircle, 10);
+
+	</script>
+
+</body>
+
+</html>
